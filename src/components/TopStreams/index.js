@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import ItemSidebar from './ItemSidebar';
-import api from '../../../api';
-import './sidebar.scss';
+import api from '../../api';
 
-function Sidebar() {
-  const [topStreams, setTopStreams] = useState([]);
-
+function TopStream() {
+  const [channels, setChannels] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       // Appel à l'API pour récupérer les top stream
@@ -43,7 +40,6 @@ function Sidebar() {
       // Création du tableua final
       const finalArray = dataArray.map((stream) => {
         stream.gameName = '';
-        stream.truePic = '';
         stream.login = '';
 
         gameNamesArray.forEach((name) => {
@@ -55,25 +51,20 @@ function Sidebar() {
             }
           });
         });
+        const newUrl = stream.thumbnail_url
+          .replace('{width}', '320')
+          .replace('{height}', '180');
+        stream.thumbnail_url = newUrl;
         return stream;
       });
-      setTopStreams(finalArray.slice(0, 6));
+      setChannels(finalArray);
     };
 
     fetchData();
   }, []);
-
-  console.log(topStreams);
-
   return (
-    <div className="sidebar">
-      <h2 className="sidebar-title">Chaîne recommandées</h2>
-      <ul className="list-stream" />
-      {topStreams.map((stream) => (
-        <ItemSidebar key={stream.id} {...stream} />
-      ))}
-    </div>
+    <h1>Je suis top streeams</h1>
   );
 }
 
-export default Sidebar;
+export default TopStream;

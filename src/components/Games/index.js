@@ -30,7 +30,7 @@ function Games() {
 
   return (
     <div>
-      <h1 className="games-title">Jeux les plus poluplaire</h1>
+      <h1 className="games-title">Jeux les plus poluplaires</h1>
       <div className="flex-home">
         {games.map((game) => (
           //Pour chaque éléments du tableau je créer un components Game

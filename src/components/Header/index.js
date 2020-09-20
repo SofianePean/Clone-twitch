@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import logo from './IconeTwitch.svg';
 import search from './Search.svg';
 import menuIco from './MenuIco.svg';
@@ -10,13 +11,19 @@ function Header() {
       <nav className="header-top">
         <ul className="list-menu">
           <li className="link-nav">
-            <img src={logo} alt="logo twitch" className="logo" />
+            <Link className="link" to="/">
+              <img src={logo} alt="logo twitch" className="logo" />
+            </Link>
           </li>
           <li className="link-nav">
-            Top Games
+            <Link className="link" to="/">
+              Top Games
+            </Link>
           </li>
           <li className="link-nav">
-            Top Stream
+            <Link className="link" to="/top-streams">
+              Top Streams
+            </Link>
           </li>
           <li className="link-nav">
             <form className="form">

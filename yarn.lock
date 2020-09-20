@@ -6841,6 +6841,13 @@ react-router@5.2.0:
     tiny-invariant "^1.0.2"
     tiny-warning "^1.0.0"
 
+react-twitch-embed-video@^2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/react-twitch-embed-video/-/react-twitch-embed-video-2.0.4.tgz#60096a1caabb0c6d240d53c503ba29ac87f2d03e"
+  integrity sha512-0gNIyY1l9tHBzkWGaDCM0P4tRH2EuxDka0g4znckrztitO06ddoLfAxilCjMYxatRjdGLV38yQuE50nVvIv6GA==
+  dependencies:
+    window-or-global "^1.0.1"
+
 react@^16.13.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react/-/react-16.13.1.tgz#2e818822f1a9743122c063d6410d85c1e3afe48e"
@@ -8429,6 +8436,11 @@ wildcard@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/wildcard/-/wildcard-2.0.0.tgz#a77d20e5200c6faaac979e4b3aadc7b3dd7f8fec"
   integrity sha512-JcKqAHLPxcdb9KM49dufGXn2x3ssnfjbcaQdLlfZsL9rH9wgDQjUtDxbo8NE0F6SFvydeu1VhZe7hZuHsB2/pw==
+
+window-or-global@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/window-or-global/-/window-or-global-1.0.1.tgz#dbe45ba2a291aabc56d62cf66c45b7fa322946de"
+  integrity sha1-2+RboqKRqrxW1iz2bEW3+jIpRt4=
 
 word-wrap@^1.2.3:
   version "1.2.3"

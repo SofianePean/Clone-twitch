@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import ItemTopStreams from './ItemTopStreams';
 import api from '../../api';
+import ItemSidebar from '../Header/Sidebar/ItemSidebar';
+import './topstreams.scss';
 
 function TopStream() {
   const [channels, setChannels] = useState([]);
@@ -51,6 +54,7 @@ function TopStream() {
             }
           });
         });
+        // Ici je viens choisir la taille de mes images
         const newUrl = stream.thumbnail_url
           .replace('{width}', '320')
           .replace('{height}', '180');
@@ -63,7 +67,15 @@ function TopStream() {
     fetchData();
   }, []);
   return (
-    <h1>Je suis top streeams</h1>
+    <div className="games">
+      <h1 className="games-title">Stream les plus populaires</h1>
+      <div className="flex-home">
+        {channels.map((channel) =>(
+          <ItemTopStreams key={channel.id} {...channel} />
+        ))}
+      </div>
+    </div>
+
   );
 }
 

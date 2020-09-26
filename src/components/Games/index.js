@@ -34,7 +34,7 @@ function Games() {
       <div className="flex-home">
         {games.map((game) => (
           //Pour chaque éléments du tableau je créer un components Game
-          <Game key={game.id} name={game.name} box={game.box_art_url} />
+          <Game key={game.id} name={game.name} box={game.box_art_url} id={game.id} />
         ))}
       </div>
     </div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import logo from './IconeTwitch.svg';
 import search from './Search.svg';
@@ -6,9 +6,36 @@ import menuIco from './MenuIco.svg';
 import './header.scss';
 
 function Header() {
+  const [menu, showMenu] = useState(false);
+  const [smallScreen, setSmallScrenn] = useState(false);
+
+  const handleMediaQueryChange = (mediaQuery) => {
+    if (mediaQuery.matches) {
+      setSmallScrenn(true);
+    }
+    else {
+      setSmallScrenn(false);
+    }
+  };
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(max-width: 900px)');
+    mediaQuery.addListener(handleMediaQueryChange);
+    handleMediaQueryChange(mediaQuery);
+
+    return () => {
+      mediaQuery.removeListener(handleMediaQueryChange);
+    };
+  });
+
+  const toggleNavRes = () => {
+    showMenu(!menu);
+  };
   return (
     <div>
       <nav className="header-top">
+        {(menu || !smallScreen) && (
+
         <ul className="list-menu">
           <li className="link-nav">
             <Link className="link" to="/">
@@ -34,9 +61,10 @@ function Header() {
             </form>
           </li>
         </ul>
+        )}
       </nav>
       <div className="menuResBtn">
-        <img src={menuIco} alt="icone menu responsive" className="menu-icon" />
+        <img onClick={toggleNavRes} src={menuIco} alt="icone menu responsive" className="menuResBtn-menu-icon" />
       </div>
     </div>
 

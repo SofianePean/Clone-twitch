@@ -63,8 +63,6 @@ function Sidebar() {
     fetchData();
   }, []);
 
-  console.log(topStreams);
-
   return (
     <div className="sidebar">
       <h2 className="sidebar-title">Chaîne recommandées</h2>

@@ -14,7 +14,6 @@ function Resultats() {
   useEffect(() => {
     const fetchData = async () => {
       const result = await api.get(`https://api.twitch.tv/helix/users?login=${cleanSearch}`);
-      console.log(result);
 
       if (result.data.data.length === 0) {
         setResult(false);

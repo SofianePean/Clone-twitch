@@ -1,5 +1,5 @@
 {
-  "homepage": "http://SofianePean.github.io/twitch-clone-react",
+  "homepage": "https://SofianePean.github.io/twitch-clone-react",
   "name": "react-modele",
   "scripts": {
     "predeploy": "yarn build",
